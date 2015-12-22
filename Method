@@ -1,0 +1,25 @@
+public int ReservationIDGenerate()
+ {
+   Connection dbConn =null;
+   dbConn = DBConnManager.connect();
+ 
+   ResultSet rs1 = null;
+   String dIDw ="select jno from reservations order by jno desc limit 1";
+ try {
+   Statement stmt = dbConn.createStatement();
+   rs1 = stmt.executeQuery(dIDw);
+   while(rs1.next()){
+   dIDw=rs1.getString("jno"); 
+ }
+   StringTokenizer stn = new StringTokenizer(dIDw,"V");
+   String sts= stn.nextToken();
+   int num =Integer.parseInt(stn.nextToken()); 
+   num= num+1;
+   return num;
+ } catch (SQLException ex) {
+ Logger.getLogger(ReservationMethodClass.class.getName()).log(Level.SEVERE, null, ex);
+ } finally {
+   DBConnManager.con_close(dbConn);
+ }
+ return 0;
+ } 
