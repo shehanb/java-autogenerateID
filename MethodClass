@@ -19,6 +19,7 @@ public int ReservationIDGenerate()
    while(rs1.next()){
    dIDw=rs1.getString("jno"); 
  }
+ // Change the string key according to your preference , here it is RSV001 therefore V
    StringTokenizer stn = new StringTokenizer(dIDw,"V");
    String sts= stn.nextToken();
    int num =Integer.parseInt(stn.nextToken()); 
