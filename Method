@@ -1,3 +1,11 @@
+public class ReservationMethodClass {
+
+    private DBConnManager DBConnManager = null;
+
+    public ReservationMethodClass() {
+        DBConnManager = new DBConnManager();
+    }
+
 public int ReservationIDGenerate()
  {
    Connection dbConn =null;
@@ -23,3 +31,4 @@ public int ReservationIDGenerate()
  }
  return 0;
  } 
+}
