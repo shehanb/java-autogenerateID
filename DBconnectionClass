@@ -6,13 +6,13 @@ public class DBConnManager {
         try {
 // Load JDBC driver
             Class.forName("com.mysql.jdbc.Driver");
-// Connection URL
+// Connection URL Enter your db name
             sourceURL = "jdbc:mysql://localhost:3306/rental system";
         } catch (ClassNotFoundException classNotFoundException) {
             System.out.println(classNotFoundException + "-----------Unable to load database driver classes");
         }
     }
-//Connect method 1
+//Connect method 1 ,specify username and password for db
     public Connection connect() {
         Connection dbConn = null;
         try {
@@ -31,7 +31,7 @@ public class DBConnManager {
         }
 
     }
-//Connect method 2 (alternative)
+//Connect method 2 (alternative), specify username, dbname and password 
     public static Connection connect2() throws ClassNotFoundException, SQLException {
 
         Class.forName("com.mysql.jdbc.Driver");
